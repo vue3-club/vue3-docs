@@ -1,9 +1,9 @@
 ---
 home: true
-heroImage: /favicon.png
-actionText: Get Started â†’
-actionLink: /guide/
-footer: MIT Licensed | Copyright Â© 2018-present Evan You
+heroImage: https://vue-js.com/public/images/vue.png 
+actionText: Get Started
+actionLink: http://vue3js.cn/vue-composition/
+footer: MIT Licensed | Copyright @ 2020-present Vue3js.cn 京ICP备15001338号-6
 ---
 
 <div class="features">
