@@ -40,9 +40,15 @@ const list = [
         link:  'http://vue3js.cn/vue-composition-api/'
       },
       {
+        desc: 'Vue 模板转换器',
+        img: '',
+        title: 'Vue-template-explorer',
+        link:  'http://vue3js.cn/vue-template-explorer/'
+      },
+      {
         desc: '',
         img: '',
-        title: 'Vue3源码加速筹备中',
+        title: 'Vue3源码解析筹备中',
         // link:  'http://vue3js.cn/vue-composition-api/'
       },
     ]
