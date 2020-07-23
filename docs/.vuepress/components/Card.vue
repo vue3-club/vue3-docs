@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="main">
     <div v-for="item in list">
-      <h3>{{item.title}}</h3>
+      <h3 v-if="item.title">{{item.title}}</h3>
       <div class="list">
         <a v-for="(sub, inx) in item.data" :href="sub.link" _target="blank" class="sub" :class="{nomargin: (inx+1)%3===0}">
           <div v-if="sub.img" class="cover" :style="{background: `url(${sub.img}) no-repeat`, backgroundSize: '100%'}">
@@ -25,8 +25,13 @@
 <script>
 const list = [
   {
-    title: '配套项目',
     data: [
+      {
+        desc: '国内CDN加速版',
+        img: '',
+        title: 'Vue3 文档',
+        link:  'http://vue3js.cn/docs/'
+      },
       {
         desc: 'Vue3设计理念，动机与目的，上手必读',
         img: '',

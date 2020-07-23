@@ -45,7 +45,7 @@ module.exports = {
         collapsable: false,
         children: [
           ["es6/", "proxy"],
-          ["es6/weekmap", "weekmap"],
+          ["es6/dataStructure", "Set、Map、WeakSet、WeakMap"],
           ["es6/typeScript", "typeScript语法"],
           ["es6/spec", "spec语法"],
         ],
@@ -58,6 +58,7 @@ module.exports = {
           ["reactivity/", "整体概览"],
           ["reactivity/reactive", "reactive"],
           ["reactivity/reactive.spec", "reactive.spec"],
+          ["reactivity/baseHandlers", "baseHandlers"],
           ["reactivity/effect", "effect"],
           ["reactivity/effect.spec", "effect.spec"],
         ],
