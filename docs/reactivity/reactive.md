@@ -16,7 +16,7 @@ Vue3中响应数据核心是 `reactive` ， `reactive` 中的实现是由 `proxy
 export function reactive<T extends object>(target: T): UnwrapNestedRefs<T>
 export function reactive(target: object) {
   // if trying to observe a readonly proxy, return the readonly version.
-  // 如果传入了目标对象且目标对象为只读属性,则直接返回目标对象
+  // 如果目标对象是一个只读的响应数据,则直接返回目标对象
   if (target && (target as Target).__v_isReadonly) {
     return target
   }

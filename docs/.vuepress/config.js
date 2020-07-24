@@ -44,10 +44,17 @@ module.exports = {
         title: "前置知识",
         collapsable: false,
         children: [
-          ["es6/", "proxy"],
+          ["es6/", "Proxy"],
           ["es6/dataStructure", "Set、Map、WeakSet、WeakMap"],
           ["es6/typeScript", "typeScript语法"],
           ["es6/spec", "spec语法"],
+        ],
+      },
+      {
+        title: "全局Api",
+        collapsable: false,
+        children: [
+          ["global/", "global"],
         ],
       },
       {
@@ -58,9 +65,13 @@ module.exports = {
           ["reactivity/", "整体概览"],
           ["reactivity/reactive", "reactive"],
           ["reactivity/reactive.spec", "reactive.spec"],
+          ["reactivity/ref", "ref"],
+          ["reactivity/ref.spec", "ref.spec"],
           ["reactivity/baseHandlers", "baseHandlers"],
           ["reactivity/effect", "effect"],
           ["reactivity/effect.spec", "effect.spec"],
+          ["reactivity/computed", "computed"],
+          ["reactivity/computed.spec", "computed.spec"],
         ],
       },
       {
