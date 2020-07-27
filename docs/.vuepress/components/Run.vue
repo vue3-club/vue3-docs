@@ -1,12 +1,13 @@
 <template lang="html">
   <div>
-    <div class="title">
-      @Vue3js.cn
-      <button @click="run">运行一下</button>
-    </div>
+
     <div class="example">
       <div class="codemirror">
         <codemirror ref="cmEditor" v-model="code" :options="cmOption" />
+      </div>
+      <div class="title">
+        @Vue3js.cn
+        <button @click="run">运行一下</button>
       </div>
       <div class="result">
         <h3>result:</h3>
@@ -17,6 +18,7 @@
 </template>
 
 <script>
+import dedent from "dedent";
 import { codemirror } from "vue-codemirror";
 // base style
 import "codemirror/lib/codemirror.css";
@@ -66,7 +68,29 @@ export default {
   },
   data() {
     return {
-      code: `<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"utf-8\">\n<title>Vue 测试33实例 - 菜鸟教程(runoob.com)</title>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.2/vue.min.js\"></script>\n</head>\n<body>\n<div id=\"app\">\n  <p>原始字符串: {{ message }}</p>\n  <p>计算后反转字符串: {{ reversedMessage }}</p>\n</div>\n\n<script>\nlet vm = new Vue({\n  el: '#app',\n  data: {\n    message: 'Runoob!'\n  },\n  computed: {\n    // 计算属性的 getter\n    reversedMessage: function () {\n      return this.message.split('').reverse().join('')\n    }\n  }\n})\n</script>\n</body>\n</html>`,
+      code: `
+          <!DOCTYPE html>
+          <html>
+          <head>
+          <meta charset="utf-8">
+          <title>Vue 测试实例</title>
+          <script src="https://doc.vue-js.com/js/vue.js">${"</script>"}
+          </head>
+          <body>
+          <div id="app">
+            <p>{{ message }}</p>
+          </div>
+          <script>
+          new Vue({
+            el: '#app',
+            data: {
+              message: 'Hello Vue.js!'
+            }
+          })
+          ${"</script>"}
+          </body>
+          </html>
+        `,
       cmOption: {
         tabSize: 4,
         foldGutter: true,
@@ -74,7 +98,8 @@ export default {
         lineNumbers: true,
         line: true,
         keyMap: "sublime",
-        mode: "text/x-vue",
+        mode: "text/html",
+        htmlMode: true,
         theme: "base16-dark",
         extraKeys: {
           F11(cm) {
@@ -85,7 +110,10 @@ export default {
           }
         }
       }
-    };
+    }
+  },
+  mounted() {
+    this.run();
   },
   methods: {
     run() {
@@ -158,16 +186,10 @@ export default {
   border: none;
 }
 .example {
-  display: flex;
   height: 70vh;
-  background: #f7f7f7;
-  padding: 30px;
-  border-radius: 15px;
 }
 .codemirror,
 .result {
-  width: 50%;
-  height: 100%;
   margin: 0;
   overflow: auto;
   padding-top: 0;
@@ -180,7 +202,7 @@ export default {
   word-break: break-all;
   word-wrap: break-word;
 }
-.result h3{
+.result h3 {
   margin: 0;
 }
 </style>
