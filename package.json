@@ -5,5 +5,8 @@
   },
   "devDependencies": {
     "vuepress": "^1.5.2"
+  },
+  "dependencies": {
+    "vue-codemirror": "^4.0.6"
   }
 }
