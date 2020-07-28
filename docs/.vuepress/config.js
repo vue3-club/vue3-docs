@@ -30,7 +30,7 @@ module.exports = {
     docsDir: "docs",
     docsBranch: "master",
     // 默认是 false, 设置为 true 来启用
-    editLinks: true,
+    editLinks: false,
     // 默认为 "Edit this page"
     editLinkText: "帮助我们改善此页面！",
     // displayAllHeaders: true,
