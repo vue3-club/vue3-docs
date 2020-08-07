@@ -46,15 +46,28 @@ module.exports = {
         children: [
           ["es6/", "Proxy"],
           ["es6/dataStructure", "Set、Map、WeakSet、WeakMap"],
-          ["es6/typeScript", "typeScript语法"],
+          ["es6/composition", "Composition"],
+          ["es6/typeScript", "TypeScript"],
           ["es6/spec", "spec语法"],
         ],
       },
       {
-        title: "全局Api",
+        title: "全局概览",
         collapsable: false,
         children: [
-          ["global/", "global"],
+          ["global/", "目录结构"],
+          ["global/createApp", "createApp"],
+          ["global/defineComponent", "defineComponent"],
+          ["global/h", "h"],
+          ["global/nextTick", "nextTick"],
+          // ["global/start", "从一个简单的例子说起"],
+        ],
+      },
+      {
+        title: "Example",
+        collapsable: false,
+        children: [
+          ["example/", "基本范例"],
         ],
       },
       {
@@ -79,6 +92,8 @@ module.exports = {
         collapsable: false,
         children: [
           ["compiler/", "compiler"],
+          ["compiler/spec/parse.spec", "parse.spec"],
+          ["compiler/spec/compile.spec", "compile.spec"],
         ],
       },
       {

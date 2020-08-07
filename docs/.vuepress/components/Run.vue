@@ -17,49 +17,53 @@
 </template>
 
 <script>
-  import dedent from 'dedent'
-  import { codemirror } from 'vue-codemirror'
-  // base style
-  import 'codemirror/lib/codemirror.css'
-  // theme css
-  import 'codemirror/theme/base16-dark.css'
-  // language
-  import 'codemirror/mode/vue/vue.js'
-  // active-line.js
-  import 'codemirror/addon/selection/active-line.js'
-  // styleSelectedText
-  import 'codemirror/addon/selection/mark-selection.js'
-  import 'codemirror/addon/search/searchcursor.js'
-  // highlightSelectionMatches
-  import 'codemirror/addon/scroll/annotatescrollbar.js'
-  import 'codemirror/addon/search/matchesonscrollbar.js'
-  import 'codemirror/addon/search/searchcursor.js'
-  import 'codemirror/addon/search/match-highlighter.js'
-  // keyMap
-  import 'codemirror/mode/clike/clike.js'
-  import 'codemirror/addon/edit/matchbrackets.js'
-  import 'codemirror/addon/comment/comment.js'
-  import 'codemirror/addon/dialog/dialog.js'
-  import 'codemirror/addon/dialog/dialog.css'
-  import 'codemirror/addon/search/searchcursor.js'
-  import 'codemirror/addon/search/search.js'
-  import 'codemirror/keymap/sublime.js'
-  // foldGutter
-  import 'codemirror/addon/fold/foldgutter.css'
-  import 'codemirror/addon/fold/brace-fold.js'
-  import 'codemirror/addon/fold/comment-fold.js'
-  import 'codemirror/addon/fold/foldcode.js'
-  import 'codemirror/addon/fold/foldgutter.js'
-  import 'codemirror/addon/fold/indent-fold.js'
-  import 'codemirror/addon/fold/markdown-fold.js'
-  import 'codemirror/addon/fold/xml-fold.js'
+import dedent from "dedent";
+import { codemirror } from "vue-codemirror";
+// base style
+import "codemirror/lib/codemirror.css";
+// theme css
+import "codemirror/theme/base16-dark.css";
+// language
+import "codemirror/mode/vue/vue.js";
+// active-line.js
+import "codemirror/addon/selection/active-line.js";
+// styleSelectedText
+import "codemirror/addon/selection/mark-selection.js";
+import "codemirror/addon/search/searchcursor.js";
+// highlightSelectionMatches
+import "codemirror/addon/scroll/annotatescrollbar.js";
+import "codemirror/addon/search/matchesonscrollbar.js";
+import "codemirror/addon/search/searchcursor.js";
+import "codemirror/addon/search/match-highlighter.js";
+// keyMap
+import "codemirror/mode/clike/clike.js";
+import "codemirror/addon/edit/matchbrackets.js";
+import "codemirror/addon/comment/comment.js";
+import "codemirror/addon/dialog/dialog.js";
+import "codemirror/addon/dialog/dialog.css";
+import "codemirror/addon/search/searchcursor.js";
+import "codemirror/addon/search/search.js";
+import "codemirror/keymap/sublime.js";
+// foldGutter
+import "codemirror/addon/fold/foldgutter.css";
+import "codemirror/addon/fold/brace-fold.js";
+import "codemirror/addon/fold/comment-fold.js";
+import "codemirror/addon/fold/foldcode.js";
+import "codemirror/addon/fold/foldgutter.js";
+import "codemirror/addon/fold/indent-fold.js";
+import "codemirror/addon/fold/markdown-fold.js";
+import "codemirror/addon/fold/xml-fold.js";
+
+import exampleJson from "./example.js";
 
 export default {
   components: {
     codemirror
   },
   name: "Run",
-  props: {},
+  props: {
+    type: String
+  },
   computed: {
     codemirror() {
       return this.$refs.cmEditor.codemirror;
@@ -67,44 +71,22 @@ export default {
   },
   data() {
     return {
-        code: `
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Vue 测试实例</title>
-<script src="https://doc.vue-js.com/js/vue.js">${'<\/script>'}
-</head>
-<body>
-<div id="app">
-  <p>{{ message }}</p>
-</div>
-<script>
-new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello Vue.js!'
-  }
-})
-${'<\/script>'}
-</body>
-</html>
-        `,
-        cmOption: {
-          tabSize: 4,
-          foldGutter: true,
-          styleActiveLine: true,
-          lineNumbers: true,
-          line: true,
-          keyMap: "sublime",
-          mode: 'text/html',
-          htmlMode: true,
-          theme: 'base16-dark'
-        }
+      code: exampleJson[this.type],
+      cmOption: {
+        tabSize: 4,
+        foldGutter: true,
+        styleActiveLine: true,
+        lineNumbers: true,
+        line: true,
+        keyMap: "sublime",
+        mode: "text/html",
+        htmlMode: true,
+        theme: "base16-dark"
+      }
     };
   },
   mounted() {
-    this.run()
+    this.run();
   },
   methods: {
     run() {
@@ -179,10 +161,11 @@ ${'<\/script>'}
   border: none;
 }
 .example {
-  height: 70vh;
+  /* height: 70vh; */
 }
 .codemirror,
 .result {
+  height: 400px;
   margin: 0;
   overflow: auto;
   padding-top: 0;
@@ -198,7 +181,13 @@ ${'<\/script>'}
   word-wrap: break-word;
   border-radius: 8px;
 }
-.result h3{
+.result h3 {
   margin: 0;
+}
+
+#iframe,
+iframe {
+  width: 100%;
+  height: 100%;
 }
 </style>
