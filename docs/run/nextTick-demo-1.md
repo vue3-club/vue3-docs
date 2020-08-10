@@ -4,4 +4,6 @@ sidebar: false
 editLinks: false
 ---
 
-<Run type="nextTick-demo-1"/>
+<ClientOnly>
+  <Run type="nextTick-demo-1"/>
+</ClientOnly>

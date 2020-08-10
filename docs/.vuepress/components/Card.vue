@@ -54,7 +54,7 @@ const list = [
         desc: '',
         img: '',
         title: 'Vue3源码解析筹备中',
-        // link:  'http://vue3js.cn/vue-composition-api/'
+        link:  '/start/'
       },
     ]
   },

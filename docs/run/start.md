@@ -4,4 +4,6 @@ sidebar: false
 editLinks: false
 ---
 
-<Run type="start"/>
+<ClientOnly>
+  <Run type="start"/>
+</ClientOnly>

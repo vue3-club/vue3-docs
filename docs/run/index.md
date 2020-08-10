@@ -4,4 +4,6 @@ sidebar: false
 editLinks: false
 ---
 
-<Run type="tree"/>
+<ClientOnly>
+  <Run type="tree"/>
+</ClientOnly>
