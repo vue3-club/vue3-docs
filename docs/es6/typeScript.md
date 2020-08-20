@@ -49,7 +49,9 @@ let n: null = null;
 
 #### 类型补充
 
-- 枚举 `Enum`，使用枚举类型可以为一组数值赋予友好的名字
+- 枚举 `Enum`
+
+使用枚举类型可以为一组数值赋予友好的名字
 ```js
 enum LogLevel {
   info = 'info',
@@ -58,7 +60,9 @@ enum LogLevel {
 }
 ```
 
-- 元组 `Tuple` 允许数组各元素的类型不必相同。 比如，你可以定义一对值分别为 string和number类型的元组
+- 元组 `Tuple` 
+
+允许数组各元素的类型不必相同。 比如，你可以定义一对值分别为 string和number类型的元组
 
 ```js
 // Declare a tuple type
@@ -69,14 +73,18 @@ x = ['hello', 10]; // OK
 x = [10, 'hello']; // Error
 ```
 
-- 任意值 `Any` 表示任意类型，通常用于不确定内容的类型，比如来自用户输入或第三方代码库
+- 任意值 `Any` 
+
+表示任意类型，通常用于不确定内容的类型，比如来自用户输入或第三方代码库
 
 ```js
 let notSure: any = 4;
 notSure = "maybe a string instead";
 notSure = false; // okay, definitely a boolean
 ```
-- 空值 `Void` 与 any 相反，通常用于函数，表示没有返回值
+- 空值 `Void` 
+
+与 any 相反，通常用于函数，表示没有返回值
 
 ```js
 function warnUser(): void {
@@ -84,7 +92,9 @@ function warnUser(): void {
 }
 ```
 
-- 接口 `interface` 类型契约，跟我们平常调服务端接口要先定义字段一个理
+- 接口 `interface` 
+
+类型契约，跟我们平常调服务端接口要先定义字段一个理
 
 如下例子 point 跟 Point 类型必须一致，多一个少一个也是不被允许的
 ```js
@@ -216,6 +226,77 @@ const result1: intersection = {
 ```
 
 ### 联合类型
+
+交叉类型(Union Types)，表示一个值可以是几种类型之一。 我们用竖线 | 分隔每个类型，所以 number | string | boolean表示一个值可以是 number， string，或 boolean
+
+```js
+type arg = string | number | boolean
+const foo = (arg: arg):any =>{ 
+    console.log(arg)
+}
+foo(1)
+foo('2')
+foo(true)
+```
+
+### 函数重载
+
+函数重载（Function Overloading）, 允许创建数项名称相同但输入输出类型或个数不同的子程序，可以简单理解为一个函数可以执行多项任务的能力
+
+例我们有一个`add`函数，它可以接收`string`类型的参数进行拼接，也可以接收`number`类型的参数进行相加
+
+```js
+function add (arg1: string, arg2: string): string
+function add (arg1: number, arg2: number): number
+
+// 实现
+function add <T,U>(arg1: T, arg2: U) {
+  // 在实现上我们要注意严格判断两个参数的类型是否相等，而不能简单的写一个 arg1 + arg2
+  if (typeof arg1 === 'string' && typeof arg2 === 'string') {
+    return arg1 + arg2
+  } else if (typeof arg1 === 'number' && typeof arg2 === 'number') {
+    return arg1 + arg2
+  }
+}
+
+add(1, 2) // 3
+add('1','2') //'12'
+```
+
+### 总结
+
+通过本篇文章，相信大家对`Typescript`不会再感到陌生了
+
+下面我们来看看在`Vue`源码`Typescript`是如何书写的，这里我们以`defineComponent`函数为例，大家可以通过这个实例，再结合文章的内容，去理解，加深`Typescript`的认识
+
+```js
+// overload 1: direct setup function
+export function defineComponent<Props, RawBindings = object>(
+  setup: (
+    props: Readonly<Props>,
+    ctx: SetupContext
+  ) => RawBindings | RenderFunction
+): {
+  new (): ComponentPublicInstance<
+    Props,
+    RawBindings,
+    {},
+    {},
+    {},
+    // public props
+    VNodeProps & Props
+  >
+} & FunctionalComponent<Props>
+
+// defineComponent一共有四个重载，这里省略三个
+
+// implementation, close to no-op
+export function defineComponent(options: unknown) {
+  return isFunction(options) ? { setup: options } : options
+}
+
+```
+
 
 交叉类型(Union Types)，表示一个值可以是几种类型之一。 我们用竖线 | 分隔每个类型，所以 number | string | boolean表示一个值可以是 number， string，或 boolean
 
