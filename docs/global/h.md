@@ -45,7 +45,7 @@ const App = {
 }
 Vue.createApp(App).mount('#app')
 ```
-<a href="/run/h" target="_blank">亲自试一试</a>
+<a href="/run/h.html" target="_blank">亲自试一试</a>
 
 ### 都干了些啥 
 

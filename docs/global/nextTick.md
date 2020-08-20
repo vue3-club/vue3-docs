@@ -69,7 +69,7 @@ export function nextTick(fn?: () => void): Promise<void> {
   return fn ? p.then(fn) : p
 }
 ```
-<a href="/run/nextTick-demo-1" target="_blank">亲自试一试</a>
+<a href="/run/nextTick-demo-1.html" target="_blank">亲自试一试</a>
 
 看到这里，有的同学可能又会问，前面我们猜想的 `DOM` 更新也是异步任务，那他们的这个执行顺序如何保证呢？
 

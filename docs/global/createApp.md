@@ -15,7 +15,7 @@ const HelloVueApp = {
 
 Vue.createApp(HelloVueApp).mount('#hello-vue')
 ```
-<a href="/run/start" target="_blank">亲自试一试</a>
+<a href="/run/start.html" target="_blank">亲自试一试</a>
 
 那么 `createApp` 里面都干了什么呢？我们接着往下看
 
