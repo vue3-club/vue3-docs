@@ -9,7 +9,8 @@
               <span v-for="label in sub.labels">{{label}}</span>
             </div>
           </div>
-          <div v-else class="cover" :style="{background: bgColors[Math.floor(Math.random() * bgColors.length)]}">
+          <!-- <div v-else class="cover" :style="{background: bgColors[Math.floor(Math.random() * bgColors.length)]}"> -->
+          <div v-else class="cover" >
             {{sub.title}}
             <div class="labels" v-if="sub.labels">
               <span v-for="label in sub.labels">{{label}}</span>
@@ -30,13 +31,15 @@ const list = [
         desc: 'Vue3中文文档，国内CDN加速版',
         img: '',
         title: 'Vue3中文文档',
-        link:  'http://vue3js.cn/docs/zh'
+        link:  'http://vue3js.cn/docs/zh',
+        labels: ['新上', 'CDN'],
       },
       {
         desc: '国内CDN加速版',
         img: '',
         title: 'Vue3文档',
-        link:  'http://vue3js.cn/docs/'
+        link:  'http://vue3js.cn/docs/',
+        labels: ['新上', 'CDN'],
       },
       {
         desc: 'Vue3设计理念，动机与目的，上手必读',
@@ -60,7 +63,8 @@ const list = [
         desc: '',
         img: '',
         title: 'Vue3源码解析筹备中',
-        link:  '/start/'
+        link:  '/start/',
+        labels: ['进行中', '诚邀加入我们'],
       },
     ]
   },
@@ -115,6 +119,32 @@ const list = [
         title: 'Vue源码导读',
         link:  'https://vue-js.com/learn-vue/'
       },
+    ]
+  },
+  {
+    title: '支持Vue3组件库',
+    data: [
+      {
+        desc: 'ant-design-vue 是 Ant Design 的 Vue 实现，组件的风格与 Ant Design 保持同步, 目前支持 Vue 3.0 的 2.0.0 测试版 已发布',
+        img: '',
+        title: 'Ant-design-vue',
+        labels: ['PC端', 'Ant-design'],
+        link: 'https://antdv.com/docs/vue/introduce-cn/'
+      },
+      {
+        desc: 'Vant 是有赞前端团队开源的移动端组件库，于 2016 年开源，已持续维护 4 年时间。目前 Vant 已完成了对 Vue 3.0 的适配工作，并发布了 Vant 3.0 Beta 版本',
+        img: '',
+        title: 'Vant 3.0',
+        labels: ['移动端'],
+        link: 'https://vant-contrib.gitee.io/vant/next'
+      },
+      {
+        desc: 'elementui风格的组件库，Vue3.0 重构版, 没有明确发布计划，目前还在紧急开发中',
+        img: '',
+        title: 'Element-plus',
+        labels: ['移动端'],
+        link: 'https://element-plus.org/#/zh-CN/component/installation'
+      }
     ]
   },
   {
@@ -266,29 +296,34 @@ export default {
 .sub .cover{
   position: relative;
   height: 120px;
-  background: #fbfbfb;
+  background: #fbfbfb !important;
   /* border: 1px solid hsla(0,0%,80%,.569); */
-  border-radius:  5px;
+  border-radius: 5px;
   font-size: 24px;
   text-align: center;
   line-height: 120px;
-  color: #fff;
+  color: #000;
   transition: all .2s ease-in-out;
+  font-weight: 200;
+  border: 1px solid #f1f1f1;
+  /* background: url(https://vue3js.cn/docs/logo.png) no-repeat right bottom; */
+  /* background-size: 80px; */
 }
 .sub .cover:hover{
   box-shadow: 0 18px 32px -18px #000!important;
   transform: translateY(-3px);
 }
 .sub .desc{
-  /* position: absolute; */
+  /* position: absolute; */ 
   width: 100%;
-  color: #333;
+  color: #9c9c9c;
   /* text-shadow: 0 2px 4px rgba(7,17,27,.5); */
   /* font-weight: 700; */
   /* background: rgba(28,31,33,.6); */
   /* bottom: 0; */
   line-height: 28px;
   padding: 5px 8px;
+  font-weight: 400;
 }
 .sub .labels{
   position: absolute;
@@ -300,11 +335,12 @@ export default {
 }
 .sub .labels span{
   padding: 3px 5px;
-  background: rgba(0, 0, 0, .5);
+  background: #4CAF50;
   color: #fff;
   display: inline-block;
   margin-right: 5px;
   border-radius: 4px;
   zoom: .8;
+  font-weight: 500;
 }
 </style>
