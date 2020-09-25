@@ -27,9 +27,15 @@ const list = [
   {
     data: [
       {
+        desc: 'Vue3中文文档，国内CDN加速版',
+        img: '',
+        title: 'Vue3中文文档',
+        link:  'http://vue3js.cn/docs/zh'
+      },
+      {
         desc: '国内CDN加速版',
         img: '',
-        title: 'Vue3 文档',
+        title: 'Vue3文档',
         link:  'http://vue3js.cn/docs/'
       },
       {

@@ -1,6 +1,6 @@
 module.exports = {
   title: "Vue3.0",
-  description: "下一代web开发方式，更快，更轻，易维护，更多的原生支持",
+  description: "Vue3 下一代web开发方式，更快，更轻，易维护，更多的原生支持",
   //   base: '/slamdunk-the-vue3/',
   head: [
     ["link", { rel: "icon", href: "/onepunch.jpeg" }],
