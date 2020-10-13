@@ -306,21 +306,14 @@ export default {
   transition: all .2s ease-in-out;
   font-weight: 200;
   border: 1px solid #f1f1f1;
-  /* background: url(https://vue3js.cn/docs/logo.png) no-repeat right bottom; */
-  /* background-size: 80px; */
 }
 .sub .cover:hover{
   box-shadow: 0 18px 32px -18px #000!important;
   transform: translateY(-3px);
 }
 .sub .desc{
-  /* position: absolute; */ 
   width: 100%;
   color: #9c9c9c;
-  /* text-shadow: 0 2px 4px rgba(7,17,27,.5); */
-  /* font-weight: 700; */
-  /* background: rgba(28,31,33,.6); */
-  /* bottom: 0; */
   line-height: 28px;
   padding: 5px 8px;
   font-weight: 400;
