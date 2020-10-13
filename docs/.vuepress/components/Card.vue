@@ -3,7 +3,7 @@
     <div v-for="item in list">
       <h3 v-if="item.title">{{item.title}}</h3>
       <div class="list">
-        <a v-for="(sub, inx) in item.data" :href="sub.link" _target="blank" class="sub" :class="{nomargin: (inx+1)%3===0}">
+        <a v-for="(sub, inx) in item.data" :href="sub.link" target="_blank" class="sub" :class="{nomargin: (inx+1)%3===0}">
           <div v-if="sub.img" class="cover" :style="{background: `url(${sub.img}) no-repeat`, backgroundSize: '100%'}">
             <div class="labels" v-if="sub.labels">
               <span v-for="label in sub.labels">{{label}}</span>
@@ -198,6 +198,35 @@ const list = [
         title: 'Vuetify',
         labels: ['移动端'],
         link: 'https://vuetifyjs.com/zh-Hans/getting-started/quick-start/'
+      }
+    ]
+  },
+  {
+    title: 'Vue3实战项目',
+    data: [
+      {
+        desc: '基于ant-design-vue,typescript,vue3.0,vite实现的 vue3 风格的后台管理系统',
+        img: '',
+        title: 'vue-vben-admin',
+        link: 'https://github.com/anncwb/vue-vben-admin'
+      },
+      {
+        desc: '基于vue3.0的开源admin项目，同时支持电脑，手机，平板，🔥🔥🔥默认分支使用vue3.x+antdv开发，master分支使用的是vue2.x+element开发',
+        img: '',
+        title: 'vue-admin-beautiful',
+        link: 'https://github.com/chuzhixin/vue-admin-beautiful'
+      },
+      {
+        desc: '基于 Vue3.0 Composition Api 快速构建实战项目',
+        img: '',
+        title: 'vue-cli',
+        link: 'https://github.com/Wscats/vue-cli'
+      },
+      {
+        desc: 'Vue3 + TypeScript开发的电影预告片webAPP，可以查看正在热映与即将上映的电影信息和短片',
+        img: '',
+        title: 'movie-trailer',
+        link: 'https://github.com/lhz960904/movie-trailer'
       }
     ]
   },
