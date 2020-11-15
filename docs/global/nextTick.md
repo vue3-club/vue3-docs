@@ -185,7 +185,7 @@ const run = (effect: ReactiveEffect) => {
 
 ### 为什么要nextTick
 
-一个例子让大家明白，如果没有 `nextTick`  更新机制，那么 `num` 每次更新值都会触发视图更新，有了`nextTick`机制，只需要更新一次，所有....为什么要相信大家心里已经有答案了 
+一个例子让大家明白，如果没有 `nextTick`  更新机制，那么 `num` 每次更新值都会触发视图更新，有了`nextTick`机制，只需要更新一次，所以为什么有`nextTick`存在，相信大家心里已经有答案了。 
 
 ```js
 {{num}}
