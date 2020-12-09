@@ -204,7 +204,7 @@ console.log(say(1))  // Argument of type '1' is not assignable to parameter of t
 console.log(say({value: 'hello vue!', length: 10})) // { value: 'hello vue!', length: 10 } 
 ```
 
-### 义叉类型
+### 交叉类型
 
 交叉类型(Intersection Types)，将多个类型合并为一个类型
 
