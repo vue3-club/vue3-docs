@@ -240,16 +240,8 @@ console.log(map)	// Map {1 => 1, 2 => 2, 3 => 3}
 ```
 - `Map` 转为 `Object`
 ```js
-// 非字符串键名会被转换为字符串
-function mapToObj(map) {
-    let obj = Object.create(null)
-    for (let [key, value] of map) {
-        obj[key] = value
-    }
-    return obj
-}
 const map = new Map().set('name', 'vue3js.cn').set('age', '18')
-mapToObj(map)  // {name: "vue3js.cn", age: "18"}
+console.log(Object.fromEntries(map.entries()))  // {name: "vue3js.cn", age: "18"}
 ```
 - `Object` 转为 `Map`
 ```js
