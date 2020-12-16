@@ -227,7 +227,7 @@ const result1: intersection = {
 
 ### 联合类型
 
-交叉类型(Union Types)，表示一个值可以是几种类型之一。 我们用竖线 | 分隔每个类型，所以 number | string | boolean表示一个值可以是 number， string，或 boolean
+联合类型(Union Types)，表示一个值可以是几种类型之一。 我们用竖线 | 分隔每个类型，所以 number | string | boolean表示一个值可以是 number， string，或 boolean
 
 ```js
 type arg = string | number | boolean
