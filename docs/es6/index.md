@@ -221,7 +221,7 @@ const proxy = new Proxy(target, {
     if(propkey[0] === '_'){
       throw Error(`${propkey} is restricted`)
     }
-    return Reflect.get(target, propkey, value, proxy)
+    return Reflect.set(target, propkey, value, proxy)
   }
 })
 
