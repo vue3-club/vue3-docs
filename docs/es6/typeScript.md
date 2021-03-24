@@ -42,7 +42,7 @@ let num: number = 1
 let str: string = 'vue3js.cn'
 let arr: number[] = [1, 2, 3] 
 let arr2: Array<number> = [1, 2, 3] // 泛型数组
-let obj: Object = {}
+let obj: object = {}
 let u: undefined = undefined;
 let n: null = null;
 ```
