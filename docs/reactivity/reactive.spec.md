@@ -1,4 +1,4 @@
-### effect.spec
+### reactive.spec
 
 文档直通车: [https://vue3js.cn/vue-composition-api/#reactive](https://vue3js.cn/vue-composition-api/#reactive)
 
