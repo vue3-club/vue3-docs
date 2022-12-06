@@ -108,10 +108,10 @@ const list = [
         link: 'https://www.nuxtjs.cn/'
       },
       {
-        desc: 'VuePress静态站点搭建首选',
+        desc: 'VuePress 静态站点搭建首选',
         img: '',
         title: 'VuePress',
-        link: 'https://vue-js.com/vuepress/zh/'
+        link: 'https://vuepress2.gitee.io/zh/'
       },
       {
         desc: '逐行剖析 Vue.js 源码九大模块，逐个击破',
